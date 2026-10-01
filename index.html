@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EconBharati | Economics Society, NCWEB Bharati College</title>
+  <meta name="description" content="EconBharati - Economics Society of NCWEB, Bharati College, University of Delhi. Learn, Research, Analyse, Engage.">
+  <style>
+    :root{
+      --navy:#102a43; --blue:#1769aa; --gold:#f4b942; --cream:#f7f9fc;
+      --text:#243b53; --muted:#627d98; --white:#fff; --line:#d9e2ec;
+    }
+    *{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    body{font-family:Inter,Segoe UI,Arial,sans-serif;color:var(--text);line-height:1.6;background:#fff}
+    a{text-decoration:none;color:inherit}
+    .container{width:min(1120px,92%);margin:auto}
+    nav{position:sticky;top:0;z-index:20;background:rgba(255,255,255,.96);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+    .nav-inner{height:72px;display:flex;align-items:center;justify-content:space-between}
+    .brand{display:flex;align-items:center;gap:11px;font-weight:800;color:var(--navy);font-size:1.12rem}
+    .logo{width:42px;height:42px;border-radius:12px;background:var(--navy);color:#fff;display:grid;place-items:center;font-weight:900}
+    .brand small{display:block;color:var(--muted);font-size:.68rem;font-weight:600}
+    .links{display:flex;gap:25px;font-size:.92rem;font-weight:600;color:var(--muted)}
+    .links a:hover{color:var(--blue)}
+    .menu{display:none;border:0;background:none;font-size:1.5rem}
+    .hero{background:linear-gradient(135deg,#eef5fb 0%,#fff 55%,#fff7e5 100%);padding:92px 0 84px}
+    .hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:50px;align-items:center}
+    .eyebrow{display:inline-block;color:var(--blue);font-weight:800;letter-spacing:.12em;text-transform:uppercase;font-size:.76rem;margin-bottom:15px}
+    h1{font-size:clamp(2.7rem,6vw,5rem);line-height:1.02;color:var(--navy);letter-spacing:-.04em}
+    .gold{color:#c98b08}
+    .hero p{font-size:1.12rem;color:var(--muted);max-width:650px;margin:24px 0 30px}
+    .buttons{display:flex;gap:13px;flex-wrap:wrap}
+    .btn{padding:13px 20px;border-radius:10px;font-weight:800;display:inline-block}
+    .primary{background:var(--navy);color:#fff}
+    .primary:hover{background:#183e60}
+    .secondary{border:1px solid var(--line);background:#fff;color:var(--navy)}
+    .hero-card{background:var(--navy);border-radius:24px;padding:34px;color:#fff;box-shadow:0 18px 50px rgba(16,42,67,.16)}
+    .hero-card .big{font-size:4.5rem;font-weight:900;line-height:1;color:var(--gold)}
+    .hero-card h3{font-size:1.35rem;margin:13px 0 5px}
+    .hero-card p{color:#c9d8e7;margin:0;font-size:.98rem}
+    section{padding:78px 0}
+    .section-head{max-width:720px;margin-bottom:40px}
+    .section-head h2{font-size:2.25rem;color:var(--navy);line-height:1.15;margin-bottom:12px}
+    .section-head p{color:var(--muted)}
+    .about{background:#fff}
+    .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:45px}
+    .quote{border-left:4px solid var(--gold);padding-left:22px;font-size:1.18rem;color:var(--navy);font-weight:700}
+    .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+    .card{padding:27px;border:1px solid var(--line);border-radius:17px;background:#fff;transition:.2s}
+    .card:hover{transform:translateY(-4px);box-shadow:0 12px 30px rgba(16,42,67,.08)}
+    .icon{font-size:1.8rem;margin-bottom:12px}
+    .card h3{color:var(--navy);margin-bottom:7px}
+    .card p{color:var(--muted);font-size:.94rem}
+    .activities{background:var(--cream)}
+    .activity{background:#fff;border:1px solid var(--line);border-radius:15px;padding:22px}
+    .activity strong{color:var(--blue);font-size:.78rem;text-transform:uppercase;letter-spacing:.08em}
+    .activity h3{margin:6px 0;color:var(--navy)}
+    .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:15px;margin-top:30px}
+    .stat{background:var(--navy);color:#fff;padding:25px;border-radius:15px;text-align:center}
+    .stat b{display:block;font-size:2rem;color:var(--gold)}
+    .stat span{font-size:.85rem;color:#c9d8e7}
+    .faculty{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+    .person{border:1px solid var(--line);border-radius:17px;padding:25px}
+    .person h3{color:var(--navy)}
+    .role{color:var(--blue);font-size:.85rem;font-weight:800}
+    .join{background:var(--navy);color:#fff;text-align:center}
+    .join h2{font-size:2.5rem;margin-bottom:12px}
+    .join p{color:#c9d8e7;max-width:650px;margin:0 auto 25px}
+    footer{background:#081c2c;color:#a9bdcf;padding:35px 0}
+    footer .footer-inner{display:flex;justify-content:space-between;gap:20px;align-items:center}
+    footer strong{color:#fff}
+    .social{display:flex;gap:16px}
+    @media(max-width:800px){
+      .links{display:none}.menu{display:block}
+      .hero-grid,.about-grid,.faculty{grid-template-columns:1fr}
+      .cards{grid-template-columns:1fr 1fr}.stats{grid-template-columns:1fr 1fr}
+    }
+    @media(max-width:520px){
+      .cards{grid-template-columns:1fr}.stats{grid-template-columns:1fr 1fr}
+      .hero{padding:65px 0}.hero-card{padding:26px}
+      footer .footer-inner{flex-direction:column;align-items:flex-start}
+    }
+  </style>
+</head>
+<body>
+<nav>
+  <div class="container nav-inner">
+    <a class="brand" href="#home">
+      <span class="logo">E₹</span>
+      <span>EconBharati<small>Economics Society · NCWEB Bharati College</small></span>
+    </a>
+    <div class="links">
+      <a href="#about">About</a><a href="#activities">Activities</a><a href="#research">Research</a>
+      <a href="#team">Team</a><a href="#join">Join Us</a>
+    </div>
+    <button class="menu" onclick="alert('Use the section links below to explore EconBharati.')">☰</button>
+  </div>
+</nav>
+
+<main id="home">
+  <section class="hero">
+    <div class="container hero-grid">
+      <div>
+        <span class="eyebrow">NCWEB · Bharati College · University of Delhi</span>
+        <h1>Think.<br><span class="gold">Analyse.</span><br>Engage.</h1>
+        <p>
+          Welcome to <b>EconBharati</b>, the Economics Society of NCWEB Bharati College —
+          a student-focused platform for economics, research, data, discussion and meaningful academic activities.
+        </p>
+        <div class="buttons">
+          <a class="btn primary" href="#join">Join EconBharati</a>
+          <a class="btn secondary" href="#activities">Explore Activities</a>
+        </div>
+      </div>
+      <div class="hero-card">
+        <div class="big">01</div>
+        <h3>One Economics Community</h3>
+        <p>Creating opportunities for students to learn beyond the classroom through workshops, research, discussions, competitions and collaborative projects.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="about" class="about">
+    <div class="container about-grid">
+      <div>
+        <span class="eyebrow">About the Society</span>
+        <h2>Building an economics culture at Bharati College.</h2>
+        <p style="margin-top:18px;color:var(--muted)">
+          EconBharati aims to provide a common academic space where students can connect economic theory with
+          real-world issues, develop analytical skills and participate in research-oriented activities.
+        </p>
+      </div>
+      <div class="quote">
+        “Economics is not only about understanding markets — it is about understanding choices, institutions and society.”
+      </div>
+    </div>
+  </section>
+
+  <section id="activities" class="activities">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">What We Do</span>
+        <h2>Learn. Research. Participate.</h2>
+        <p>Activities can be expanded throughout the academic year based on student interests and faculty guidance.</p>
+      </div>
+      <div class="cards">
+        <div class="card"><div class="icon">📊</div><h3>Data Analysis Workshops</h3><p>Hands-on sessions using Excel, Stata, R and other tools to build practical data skills.</p></div>
+        <div class="card"><div class="icon">🔎</div><h3>Research Projects</h3><p>Small student-led research projects connecting economics with current social and policy questions.</p></div>
+        <div class="card"><div class="icon">🎤</div><h3>Guest Lectures</h3><p>Interactive talks with academics, researchers, practitioners and economists.</p></div>
+        <div class="card"><div class="icon">📝</div><h3>Writing & Articles</h3><p>Opportunities to write explainers, articles and research notes on economic issues.</p></div>
+        <div class="card"><div class="icon">🏆</div><h3>Competitions</h3><p>Quizzes, debates, case competitions and other activities that encourage economic thinking.</p></div>
+        <div class="card"><div class="icon">🤝</div><h3>Student Collaboration</h3><p>Build a network of students interested in economics, research and interdisciplinary learning.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="research">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">Research & Learning</span>
+        <h2>From classroom concepts to real-world questions.</h2>
+        <p>Students can explore topics across development, labour, health, public finance, behavioural economics, data analysis and more.</p>
+      </div>
+      <div class="stats">
+        <div class="stat"><b>01</b><span>Student-led society</span></div>
+        <div class="stat"><b>04+</b><span>Core activity areas</span></div>
+        <div class="stat"><b>∞</b><span>Ideas to explore</span></div>
+        <div class="stat"><b>2026</b><span>Society initiative</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="team" style="background:var(--cream)">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">Guidance & Coordination</span>
+        <h2>Faculty-led, student-driven.</h2>
+      </div>
+      <div class="faculty">
+        <div class="person">
+          <span class="role">Under the Guidance of</span>
+          <h3>Dr. Abhishek Puneet</h3>
+          <p style="color:var(--muted)">TIC, NCWEB Bharati College</p>
+        </div>
+        <div class="person">
+          <span class="role">Faculty Coordinator</span>
+          <h3>Parveen Singhal</h3>
+          <p style="color:var(--muted)">Faculty, Economics · NCWEB Bharati College</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="join" class="join">
+    <div class="container">
+      <span class="eyebrow" style="color:var(--gold)">Get Involved</span>
+      <h2>Be part of EconBharati.</h2>
+      <p>Interested in economics, research, data analysis, writing, events or simply learning something new? Register your interest and become part of the society.</p>
+      <a class="btn" style="background:var(--gold);color:var(--navy)" href="#" onclick="alert('Replace this button with your Google Form registration link.');return false;">Student Registration →</a>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="container footer-inner">
+    <div><strong>EconBharati</strong><br>Economics Society · NCWEB Bharati College · University of Delhi</div>
+    <div class="social"><span>Instagram</span><span>LinkedIn</span><span>Email</span></div>
+  </div>
+</footer>
+</body>
+</html>
